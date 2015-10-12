@@ -1,4 +1,8 @@
-# this is a Clojure-friendly emacs config
+# Nick Bauman's Personal Emacs Config
+
+I added neo-tree to the brave clojure setup.
+
+## this is a Clojure-friendly emacs config
 
 If you're new to emacs, check out
 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
