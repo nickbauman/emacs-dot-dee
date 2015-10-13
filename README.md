@@ -1,6 +1,6 @@
 # Nick Bauman's Personal Emacs Config
 
-I added neo-tree to the brave clojure setup.
+I added neo-tree to the brave clojure setup. I've also upgraded many of the packages used in the brave clojure setup.
 
 ## this is a Clojure-friendly emacs config
 
