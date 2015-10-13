@@ -2,10 +2,12 @@
 
 I added neo-tree to the brave clojure setup. I've also upgraded many of the packages used in the brave clojure setup.
 
-## this is a Clojure-friendly emacs config
+## This is a Clojure-friendly emacs config
 
 If you're new to emacs, check out
 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
+
+The TL;DR here is install emacs (NOT AquaMacs) and copy this repo to `~/.emacs.d` replacing the existing one if it exists, then launch emacs. `F8` will launch a file browser in its own pane.
 
 ## Organization
 
