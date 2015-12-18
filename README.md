@@ -2,7 +2,7 @@
 
 I added neo-tree to the brave clojure setup. I've also upgraded many of the packages used in the brave clojure setup.
 
-## This is a Clojure-friendly emacs config
+## This is a Clojure-friendly emacs config, with some golang support, such as it is.
 
 If you're new to emacs, check out
 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
@@ -32,3 +32,18 @@ Emacs has decent support for CSS, HTML, JS, and many other file types out of the
 * Adds support for YAML and SCSS using the yaml-mode and scss-mode packages
 
 In general, if you want to add support for a language then you should be able to find good instructions for it through Google. Most of the time, you'll just need to install the "x-lang-mode" package for it.
+
+## Supporting GO somewhat
+
+The golang support was derived from the following blog post:
+http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
+
+Needless to say, far from all of that is used here. You will need to follow these steps at least for installing `go-mode:`
+
+* Start with `mkdir -p ~/misc/emacs && cd ~/misc/emacs`
+* Then `git clone git@github.com:dominikh/go-mode.el.git` or if you prefer `https://github.com/dominikh/go-mode.el.git`
+* From within Emacs, run `M-x update-file-autoloads`, point it at the `go-mode.el` file in the cloned directory. Emacs will prompt you for a result path, and you should enter `~/misc/emacs/go-mode.el/go-mode-load.el`
+* Add these two lines to your `~/.emacs.d/init.d`
+    (add-to-list 'load-path "~/Misc/emacs/go-mode.el/")
+    (require 'go-mode-load)
+

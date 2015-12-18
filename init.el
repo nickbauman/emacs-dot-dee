@@ -151,3 +151,24 @@
 (global-company-mode 1)
 (column-number-mode 1)
 (global-auto-revert-mode 1)
+
+; You will need to install go-mode into ~/misc/emacs first. See README
+(add-to-list 'load-path "~/misc/emacs/go-mode.el/")
+(require 'go-mode-load)
+
+; Go language support NOTE HARDCODED PATHS
+(defun my-go-mode-hook ()
+  (setq exec-path (cons "/usr/local/Cellar/go/1.4.2" exec-path))
+  (add-to-list 'exec-path "/Users/nickbauman/workspaces/buzzfeed/buzzcast/buzzcast_api/bin")
+  ; Use goimports instead of go-fmt
+  (setq gofmt-command "goimports")
+  ; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+  ; Godef jump key binding
+  (local-set-key (kbd "M-.") 'godef-jump))
+
+(add-hook 'go-mode-hook 'my-go-mode-hook)
